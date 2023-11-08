@@ -4,13 +4,7 @@ import TodoListItem from "./TodoListItem";
 
 const TodoList = () => {
 
-    const todos: Todo[] = [
-
-        { id: 1, title: 'Aprender React', done: true },
-        { id: 2, title: 'Aprender Typescript', done: false },
-        { id: 3, title: 'Arrumar um bom emprego', done: false },
-        
-    ];
+    const todos: Todo[] = [];
 
     return (
         <div className="uk-container">
