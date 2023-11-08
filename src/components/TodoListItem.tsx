@@ -8,18 +8,24 @@ interface TodoListItemProps {
 
 const TodoListItem = (props: TodoListItemProps) => {
 
+    const onRemove = (todo: Todo) => {
+        console.log(todo)
+    }
 
+    const handleChange = (event: any) => {
+        console.log("mudou")
+    }
 
     return (
         <tr className="uk-animation-slide-bottom-medium">
             <td className="uk-width-auto">
                 <label>
-                    <input type="checkbox" className="uk-checkbox" />
+                    <input type="checkbox" className="uk-checkbox" checked={props.todo.done} onChange={handleChange}/>
                 </label>
             </td>
             <td className="uk-width-exoabd">{props.todo.title}</td>
             <td className="uk-width-auto">
-                <button className="uk-icon-button uk-button-danger" uk-icon="trash"></button>
+                <button className="uk-icon-button uk-button-danger" uk-icon="trash" onClick={() => onRemove(props.todo)}></button>
             </td>
         </tr>
     )
