@@ -1,10 +1,11 @@
-import React from "react";
-import { Todo } from "../models/Todo";
+import React, { useContext } from "react";
 import TodoListItem from "./TodoListItem";
+import { TodoContext } from "../contexts/TodoContext";
+import { TodoContextType } from "../contexts/TodoContextType";
 
 const TodoList = () => {
 
-    const todos: Todo[] = [];
+    const { todos } = useContext<TodoContextType>(TodoContext);
 
     return (
         <div className="uk-container">
