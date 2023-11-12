@@ -15,7 +15,15 @@ const TodoProvider = (props: any) => {
     const [todos, setTodos] = useState<Todo[]>(get)
 
     useEffect(()=>{
+        // if(todos == null || todos == undefined || todos.length == 0) {
+        //     setTodos([
+        //         {id: 1, title: 'task1', done: true},
+        //         {id: 2, title: 'task2', done: false}
+        //     ])
+        // }
+
         save(todos)
+
     },[todos])
 
     const addTodo = (title: string) => {
